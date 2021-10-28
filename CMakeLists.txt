@@ -49,7 +49,7 @@ ENDIF(WIN32)
 # --- OPTIONS ----------------------------------------
 OPTION(BUILD_BENCHMARK "Build the benchmarks" OFF)
 OPTION(BUILD_UTILS "Build the utils" OFF)
-OPTION(BUILD_PYTHON_INTERFACE "Build the Python bindings" ON)
+OPTION(BUILD_PYTHON_INTERFACE "Build the Python bindings" OFF)
 OPTION(BUILD_WITH_COMMIT_VERSION "Build libraries by setting specific commit version" OFF)
 
 IF(DEFINED BUILD_UNIT_TESTS)
@@ -63,7 +63,7 @@ OPTION(BUILD_ADVANCED_TESTING "Build the advanced tests (multiprecision, etc.) o
 
 # --- OPTIONAL DEPENDENCIES -------------------------
 OPTION(BUILD_WITH_URDF_SUPPORT "Build the library with the URDF format support" ON)
-OPTION(BUILD_WITH_COLLISION_SUPPORT "Build the library with the collision support (required HPP-FCL)" OFF)
+OPTION(BUILD_WITH_COLLISION_SUPPORT "Build the library with the collision support (required HPP-FCL)" ON)
 OPTION(BUILD_WITH_AUTODIFF_SUPPORT "Build the library with the automatic differentiation support (via CppAD)" OFF)
 OPTION(BUILD_WITH_CASADI_SUPPORT "Build the library with the support of CASADI" OFF)
 OPTION(BUILD_WITH_CODEGEN_SUPPORT "Build the library with the support of code generation (via CppADCodeGen)" OFF)
@@ -267,20 +267,20 @@ LIST(APPEND HEADERS
 # --- MAIN LIBRARY -------------------------------------------------------------
 ADD_SUBDIRECTORY(src)
 
-# --- BINDINGS -----------------------------------------------------------------
-ADD_SUBDIRECTORY(bindings)
+# # --- BINDINGS -----------------------------------------------------------------
+# ADD_SUBDIRECTORY(bindings)
 
-# --- EXECUTABLES --------------------------------------------------------------
-ADD_SUBDIRECTORY(utils)
+# # --- EXECUTABLES --------------------------------------------------------------
+# ADD_SUBDIRECTORY(utils)
 
-# --- UNIT TESTS ---------------------------------------------------------------
-ADD_SUBDIRECTORY(unittest)
+# # --- UNIT TESTS ---------------------------------------------------------------
+# ADD_SUBDIRECTORY(unittest)
 
-# --- CHECK EXAMPLES -----------------------------------------------------------
-ADD_SUBDIRECTORY(examples)
+# # --- CHECK EXAMPLES -----------------------------------------------------------
+# ADD_SUBDIRECTORY(examples)
 
-# --- BENCHMARKS ---------------------------------------------------------------
-ADD_SUBDIRECTORY(benchmark)
+# # --- BENCHMARKS ---------------------------------------------------------------
+# ADD_SUBDIRECTORY(benchmark)
 
 # --- PACKAGING ----------------------------------------------------------------
 MACRO(EXPORT_VARIABLE var_name var_value)
