@@ -59,6 +59,7 @@ IF(DEFINED BUILD_UNIT_TESTS)
     If you are manually building Pinocchio from source in an existing build folder,\
     we suggest that you delete your build folder and make a new one.")
   SET(BUILD_TESTING ${BUILD_UNIT_TESTS})
+  SET(BUILD_TESTING OFF)
 ENDIF(DEFINED BUILD_UNIT_TESTS)
 
 OPTION(BUILD_ADVANCED_TESTING "Build the advanced tests (multiprecision, etc.) of Pinocchio" OFF)
